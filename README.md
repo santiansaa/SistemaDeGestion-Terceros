@@ -1,67 +1,24 @@
-# Sistema Integral de Gestión de Terceros, Facturación y Pagos
+ ¡Les comparto mi último proyecto de desarrollo! 🚀
 
-¡Bienvenido! Este proyecto consiste en una aplicación web robusta orientada a la gestión comercial y financiera de una organización. Permite centralizar, administrar y automatizar el control de facultades, terceros (proveedores), facturas recibidas y los pagos correspondientes emitidos a cada uno de ellos.
+Durante estas últimas semanas estuve trabajando en el diseño y desarrollo de un Sistema Integral de Gestión de Terceros, Facturación y Pagos. El objetivo principal fue crear una herramienta robusta y eficiente para centralizar la administración de proveedores (terceros), facultades, el control de comprobantes recibidos y sus respectivos flujos de pago.
 
-Desarrollado bajo una arquitectura empresarial, el sistema implementa un backend potente en **Java con Spring Boot** y una interfaz de usuario dinámica y moderna construida enteramente con **Vaadin Flow**, garantizando una experiencia fluida y reactiva sin necesidad de escribir JavaScript.
+Este proyecto me permitió profundizar en la arquitectura empresarial de Java y resolver desafíos reales de persistencia y diseño de interfaz.
 
----
+ Stack Tecnológico utilizado:
+- Backend: Java 21 & Spring Boot 3 (Spring Data JPA, Spring Core).
+- Persistencia: PostgreSQL & Hibernate (Modelado relacional y mapeo de relaciones complejas @ManyToOne).
+- Frontend: Vaadin Flow 24 (Desarrollo de interfaces reactivas basadas 100% en componentes Java y manejo estricto de Binders para validación de datos en tiempo real).
+- Pool de Conexiones: HikariCP.
+- Gestión de dependencias: Maven.
 
-## 🚀 Características Principales
+  Principales desafíos y aprendizajes:
+- Mapeo y sincronización exacta entre las entidades de Java y un modelo físico de base de datos relacional.
+- Optimización de la experiencia de usuario (UX) mediante el uso de componentes avanzados como Grid<T> y Selectores dinámicos para evitar inconsistencias en la carga de datos.
+- Separación estricta de responsabilidades siguiendo el patrón Controlador/Servicio/Repositorio.
 
-* **Autenticación de Usuarios:** Sistema de login seguro con persistencia de sesión por usuario y opción de registro de nuevas cuentas.
-  
-  ![Pantalla de Login](images/login.png)
+Agradezco enormemente el espacio que nos brindan en la UTN Facultad Regional Paraná para seguir potenciando nuestro perfil técnico y afrontar proyectos que simulan escenarios reales del mundo IT. 🎓💻
 
-* **Menú Principal Intuitivo:** Acceso centralizado a los diferentes módulos del sistema mediante tarjetas interactivas y control de estado de sesión.
+ Pueden ver el código fuente y la arquitectura detallada en mi repositorio de GitHub:
+ https://github.com/santianasa/SistemaDeGestion-Terceros.git
 
-  ![Menú Principal](images/menu.png)
-
-* **Gestión de Facultades:** Formulario optimizado para la administración de sedes o facultades académicas.
-
-  ![Gestión de Facultades](images/facultades.png)
-
-* **Administración de Terceros:** Módulo con diseño de pantalla dividida que incluye validación de formularios en tiempo real y grillas de datos avanzadas (`Grid<T>`) con acciones de edición y eliminación segura en línea.
-
-  ![Gestión de Terceros](images/terceros.png)
-
-* **Control de Facturación y Pagos:** Registro ordenado de comprobantes y órdenes de pago asociadas a cada proveedor, incluyendo selectores estrictos para los métodos de pago (`EFECTIVO`, `TRANSFERENCIA`, `MERCADO PAGO`, `TARJETA`, `CHEQUE`).
-
----
-
-## 🛠️ Tecnologías y Stack Utilizado
-
-* **Lenguaje:** Java 21 (JDK 21)
-* **Framework Principal:** Spring Boot 3.x (Spring Data JPA, Spring Core)
-* **Capa de Presentación (Frontend):** Vaadin Flow 24.x (Arquitectura basada en componentes Java)
-* **Base de Datos Relacional:** PostgreSQL
-* **Mapeo Objeto-Relacional (ORM):** Hibernate / JPA
-* **Gestor de Dependencias:** Maven
-* **Pool de Conexiones:** HikariCP
-
----
-
-## 📐 Arquitectura del Proyecto
-
-El código fuente sigue las mejores prácticas de separación de responsabilidades y Clean Code en Java:
-
-* `model/`: Clases de entidad de JPA que mapean exactamente con la estructura relacional de la base de datos PostgreSQL mediante anotaciones (`@Entity`, `@Table`, `@ManyToOne`, etc.).
-* `repositorios/`: Interfaces que extienden de `JpaRepository` para la abstracción total de las consultas SQL y operaciones básicas de persistencia.
-* `services/`: Capa lógica de negocio que encapsula el comportamiento del sistema y actúa como puente entre los repositorios y la vista.
-* `views/`: Componentes visuales interactivos de Vaadin para la renderización de la interfaz en el navegador.
-
----
-
-## 🔧 Configuración y Requisitos Previos
-
-### 1. Base de Datos (PostgreSQL)
-Asegurate de tener una instancia de PostgreSQL corriendo y crear la base de datos del proyecto. Las tablas y relaciones se mapearán automáticamente o puedes crearlas respetando los nombres de columnas físicas como `id_pagos`, `monto_pago`, `modo_pago`, etc.
-
-### 2. Configurar las Credenciales
-Modificá el archivo `src/main/resources/application.properties` con los datos de tu entorno local:
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5Host/tu_base_de_datos
-spring.datasource.username=tu_usuario_postgres
-spring.datasource.password=tu_contraseña_postgres
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+#Java #SpringBoot #Vaadin #PostgreSQL #Backend #Developer #Programming #UTN #FRP #SoftwareDevelopment
