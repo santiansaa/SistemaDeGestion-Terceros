@@ -1,34 +1,56 @@
-# My Application README
+# Sistema Integral de Gestión de Terceros, Facturación y Pagos
 
-- [ ] TODO Replace or update this README with instructions relevant to your application
+¡Bienvenido! Este proyecto consiste en una aplicación web robusta orientada a la gestión comercial y financiera de una organización. Permite centralizar, administrar y automatizar el control de facultades, terceros (proveedores), facturas recibidas y los pagos correspondientes emitidos a cada uno de ellos.
 
-To start the application in development mode, import it into your IDE and run the `Application` class. 
-You can also start the application from the command line by running: 
+Desarrollado bajo una arquitectura empresarial, el sistema implementa un backend potente en **Java con Spring Boot** y una interfaz de usuario dinámica y moderna construida enteramente con **Vaadin Flow**, garantizando una experiencia fluida y reactiva sin necesidad de escribir JavaScript.
 
-```bash
-./mvnw
-```
+---
 
-To build the application in production mode, run:
+## 🚀 Características Principales
 
-```bash
-./mvnw package
-```
+* **Autenticación de Usuarios:** Sistema de login seguro con persistencia de sesión por usuario y opción de registro de nuevas cuentas.
+* **Gestión de Facultades:** CRUD completo para la administración de sedes o facultades académicas.
+* **Administración de Terceros:** Módulo centralizado para la gestión de proveedores, asociados y entidades vinculadas.
+* **Control de Facturación:** Registro ordenado de facturas vinculadas a sus respectivos terceros y facultades, incluyendo fechas de emisión, vencimiento e importes.
+* **Gestión de Pagos:** Módulo optimizado para registrar la salida de dinero asociada a cada proveedor. Cuenta con selectores estrictos para las formas de pago (`EFECTIVO`, `TRANSFERENCIA`, `MERCADO PAGO`, `TARJETA`, `CHEQUE`) y vinculación directa con el flujo financiero de la base de datos.
+* **Interfaz de Usuario Interactiva:** Grillas de datos avanzadas (`Grid<T>`), ordenamiento, eliminación segura en línea y validación de formularios en tiempo real mediante `Binder` de Vaadin.
 
-To build a Docker image, run:
+---
 
-```bash
-docker build -t my-application:latest .
-```
+## 🛠️ Tecnologías y Stack Utilizado
 
-If you use commercial components, pass the license key as a build secret:
+* **Lenguaje:** Java 21 (JDK 21)
+* **Framework Principal:** Spring Boot 3.x (Spring Data JPA, Spring Core)
+* **Capa de Presentación (Frontend):** Vaadin Flow 24.x (Arquitectura basada en componentes Java)
+* **Base de Datos Relacional:** PostgreSQL
+* **Mapeo Objeto-Relacional (ORM):** Hibernate / JPA
+* **Gestor de Dependencias:** Maven
+* **Pool de Conexiones:** HikariCP
 
-```bash
-docker build --secret id=proKey,src=$HOME/.vaadin/proKey .
-```
+---
 
-## Getting Started
+## 📐 Arquitectura del Proyecto
 
-The [Quick Start](https://vaadin.com/docs/v25/getting-started/quick-start) tutorial helps you get started with Vaadin in 
-around 10 minutes. This tutorial walks you through building a simple application, introducing the core concepts along 
-the way.
+El código fuente sigue las mejores prácticas de separación de responsabilidades y Clean Code en Java:
+
+* `model/`: Clases de entidad de JPA que mapean exactamente con la estructura relacional de la base de datos PostgreSQL mediante anotaciones (`@Entity`, `@Table`, `@ManyToOne`, etc.).
+* `repositorios/`: Interfaces que extienden de `JpaRepository` para la abstracción total de las consultas SQL y operaciones básicas de persistencia.
+* `services/`: Capa lógica de negocio que encapsula el comportamiento del sistema y actúa como puente entre los repositorios y la vista.
+* `views/`: Componentes visuales interactivos de Vaadin para la renderización de la interfaz en el navegador.
+
+---
+
+## 🔧 Configuración y Requisitos Previos
+
+### 1. Base de Datos (PostgreSQL)
+Asegurate de tener una instancia de PostgreSQL corriendo y crear la base de datos del proyecto. Las tablas y relaciones se mapearán automáticamente o puedes crearlas respetando los nombres de columnas físicas como `id_pagos`, `monto_pago`, `modo_pago`, etc.
+
+### 2. Configurar las Credenciales
+Modificá el archivo `src/main/resources/application.properties` con los datos de tu entorno local:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5Host/tu_base_de_datos
+spring.datasource.username=tu_usuario_postgres
+spring.datasource.password=tu_contraseña_postgres
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
