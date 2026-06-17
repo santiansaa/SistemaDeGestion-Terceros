@@ -9,11 +9,22 @@ Desarrollado bajo una arquitectura empresarial, el sistema implementa un backend
 ## 🚀 Características Principales
 
 * **Autenticación de Usuarios:** Sistema de login seguro con persistencia de sesión por usuario y opción de registro de nuevas cuentas.
-* **Gestión de Facultades:** CRUD completo para la administración de sedes o facultades académicas.
-* **Administración de Terceros:** Módulo centralizado para la gestión de proveedores, asociados y entidades vinculadas.
-* **Control de Facturación:** Registro ordenado de facturas vinculadas a sus respectivos terceros y facultades, incluyendo fechas de emisión, vencimiento e importes.
-* **Gestión de Pagos:** Módulo optimizado para registrar la salida de dinero asociada a cada proveedor. Cuenta con selectores estrictos para las formas de pago (`EFECTIVO`, `TRANSFERENCIA`, `MERCADO PAGO`, `TARJETA`, `CHEQUE`) y vinculación directa con el flujo financiero de la base de datos.
-* **Interfaz de Usuario Interactiva:** Grillas de datos avanzadas (`Grid<T>`), ordenamiento, eliminación segura en línea y validación de formularios en tiempo real mediante `Binder` de Vaadin.
+  
+  ![Pantalla de Login](images/login.png)
+
+* **Menú Principal Intuitivo:** Acceso centralizado a los diferentes módulos del sistema mediante tarjetas interactivas y control de estado de sesión.
+
+  ![Menú Principal](images/menu.png)
+
+* **Gestión de Facultades:** Formulario optimizado para la administración de sedes o facultades académicas.
+
+  ![Gestión de Facultades](images/facultades.png)
+
+* **Administración de Terceros:** Módulo con diseño de pantalla dividida que incluye validación de formularios en tiempo real y grillas de datos avanzadas (`Grid<T>`) con acciones de edición y eliminación segura en línea.
+
+  ![Gestión de Terceros](images/terceros.png)
+
+* **Control de Facturación y Pagos:** Registro ordenado de comprobantes y órdenes de pago asociadas a cada proveedor, incluyendo selectores estrictos para los métodos de pago (`EFECTIVO`, `TRANSFERENCIA`, `MERCADO PAGO`, `TARJETA`, `CHEQUE`).
 
 ---
 
